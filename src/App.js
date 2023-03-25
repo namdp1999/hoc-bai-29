@@ -1,25 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import Country from './components/Country';
+import Menu from './components/Menu';
+import ProductList from './components/ProductList';
+import Search from './components/Search';
 
 function App() {
+  const isLogin = false;
+  const isSearch = true;
+
+  const arrayMenu = [
+    "Trang chủ",
+    "Sản phẩm",
+    "Tin tức",
+    "Giới thiệu",
+    "Liên hệ",
+  ];
+  // if(isLogin) {
+  //   return (
+  //     <>
+  //       Đã login
+  //     </>
+  //   );
+  // } else {
+  //   return (
+  //     <>
+  //       Chưa login
+  //     </>
+  //   );
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {isLogin ? (<>Đã login</>) : (<>Chưa login</>)}
+      {isSearch && <Search />}
+
+      <div>
+        <Menu menu={arrayMenu} />
+      </div>
+
+      <div>
+        <ProductList />
+      </div>
+
+      <div>
+        <Country />
+      </div>
+    </>
+  )
 }
 
 export default App;
