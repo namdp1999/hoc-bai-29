@@ -1,8 +1,11 @@
 import './App.css';
+import Cart from './components/Cart';
 import Country from './components/Country';
+import Lamp from './components/Lamp';
 import Menu from './components/Menu';
 import ProductList from './components/ProductList';
 import Search from './components/Search';
+import SearchUser from './components/SearchUser';
 
 function App() {
   const isLogin = false;
@@ -14,6 +17,16 @@ function App() {
     "Tin tức",
     "Giới thiệu",
     "Liên hệ",
+  ];
+
+  const listUser = [
+    "Le Van A",
+    "Nguyen Thi B",
+    "Do Thi C",
+    "Hoang Van D",
+    "Dao Thi E",
+    "Le Thi F",
+    "Le Thi G"
   ];
   // if(isLogin) {
   //   return (
@@ -31,6 +44,18 @@ function App() {
 
   return (
     <>
+      <SearchUser listUser={listUser} />
+
+      {/* <div>
+        <Cart />
+      </div>
+
+      <hr />
+
+      <div>
+        <Lamp />
+      </div>
+
       {isLogin ? (<>Đã login</>) : (<>Chưa login</>)}
       {isSearch && <Search />}
 
@@ -44,7 +69,7 @@ function App() {
 
       <div>
         <Country />
-      </div>
+      </div> */}
     </>
   )
 }
